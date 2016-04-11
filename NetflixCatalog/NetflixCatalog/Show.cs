@@ -10,27 +10,25 @@ namespace NetflixCatalog
     {
         //Episode episode;
         public List<Episode> listOfEpisodes;
+        public int numberOfEpisodes;
         
-        public Show()
+        public Show(string Name, int Rating, int NumberOfEpisodes)
         {
             listOfEpisodes = new List<Episode>();
+            name = Name;
+            rating = Rating;
+            numberOfEpisodes = NumberOfEpisodes;
             //episode = new Episode();
             //overide parent (Title) int rating
         }
-
-
-        public void AddEpisodesToList()
+        
+        public override string ToString()                               //good
         {
-            Episode episode = new Episode("The War to Come", 4);
-            Episode episode2 = new Episode("The House of Black and White", 3);
-            Episode episode3 = new Episode("High Sparrow", 3);
-            Episode episode4 = new Episode("Sons of the Harpy", 3);
-            listOfEpisodes.Add(episode);
-            listOfEpisodes.Add(episode2);
-            listOfEpisodes.Add(episode3);
-            listOfEpisodes.Add(episode4);
+            return string.Format("[{0}, has {1} episodes]", name, numberOfEpisodes);
         }
 
-
     }
+
+            //Override parent’s Rating to return an aggregated rating of Episode ratings
+
 }

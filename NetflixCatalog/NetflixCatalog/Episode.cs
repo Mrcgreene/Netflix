@@ -8,8 +8,8 @@ namespace NetflixCatalog
 {
     public class Episode
     {
-        string name;
-        int rating;
+        public string name;
+        public int rating;
 
         public Episode(string Name, int Rating)
         {
