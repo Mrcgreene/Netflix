@@ -39,13 +39,13 @@ namespace NetflixCatalog
             }
         }
 
-        public void Greeting()
+        public void Greeting()                      //good
         {
             Console.WriteLine("You have began your search of the Netflix Catalog.");
             Console.WriteLine("You can find a list of titles by simply choosing a genre.");
         }
 
-        public void AddMoviesToList()
+        public void AddMoviesToList()               //good
         {
             Action.listOfTitles.Add(new Movie("The Bourne Identity", 5, 123));
             All.listOfTitles.Add(new Movie("The Bourne Identity", 5, 123));
@@ -67,7 +67,7 @@ namespace NetflixCatalog
             All.listOfTitles.Add(new Movie("Scarface", 5, 154));
         }
 
-        public void PrintAllTitles()
+        public void PrintAllTitles()                //good
         {
             Console.WriteLine("Here are all of the available titles:");
             foreach (Title title in All.listOfTitles)
@@ -76,25 +76,25 @@ namespace NetflixCatalog
             }
         }
 
-        public void PrintActionTitles()
+        public void PrintActionTitles()             //good
         {
             Console.WriteLine("Here are the available Action titles:");
             foreach (Title title in Action.listOfTitles)
             {
                 Console.WriteLine(title.name);
             }
-        }
+        }   
 
-        public void PrintRomanceTitles()
+        public void PrintRomanceTitles()            //good
         {
             Console.WriteLine("Here are the available Romance titles:");
             foreach (Title title in Romance.listOfTitles)
             {
                 Console.WriteLine(title.name);
             }
-        }
+        }           
 
-        public void PrintComedyTitles()
+        public void PrintComedyTitles()             //good
         {
             Console.WriteLine("Here are the available Comedy titles:");
             foreach (Title title in Comedy.listOfTitles)
@@ -103,7 +103,7 @@ namespace NetflixCatalog
             }
         }
 
-        public void ChooseGenres()
+        public void ChooseGenres()                  //good
         {
             int decision;
             Console.WriteLine("Which genre would you like to view?");
@@ -112,12 +112,30 @@ namespace NetflixCatalog
             Console.WriteLine("(3) Comedy genre");
             Console.WriteLine("(4) Romance genre");
             decision = Convert.ToInt32(Console.ReadLine());
+            if(decision == 1)
+            {
+                PrintAllTitles();
+            }
+            else if(decision == 2)
+            {
+                PrintActionTitles();
+            }
+            else if (decision == 3)
+            {
+                PrintComedyTitles();
+            }
+            else if (decision == 4)
+            {
+                PrintRomanceTitles();
+            }
+            Console.ReadLine();
         }
+
         public void Start()
         {
             Greeting();
             AddMoviesToList();
-
+            ChooseGenres();
         }
 
     }

@@ -22,23 +22,26 @@ namespace NetflixCatalog
             }
             */
 
-            Title testTitle = new Movie("Lord of the Rings", 5, 132);
-            Title test2Title = new Movie("Spring in Milwaukee", 1, 132);
-            Genre all = new Genre("All");
-            Genre fantasy = new Genre("Fantasy");
-            Genre horror = new Genre("Horror");
-            fantasy.listOfTitles.Add(testTitle);
-            all.listOfTitles.Add(testTitle);
-            horror.listOfTitles.Add(test2Title);
-            all.listOfTitles.Add(test2Title);
-            Genre combinedTitles;   //fix
-            combinedTitles = testTitle + test2Title;
+            //Title testTitle = new Movie("Lord of the Rings", 5, 132);
+            //Title test2Title = new Movie("Spring in Milwaukee", 1, 132);
+            //Genre all = new Genre("All");
+            //Genre fantasy = new Genre("Fantasy");
+            //Genre horror = new Genre("Horror");
+            //fantasy.listOfTitles.Add(testTitle);
+            //all.listOfTitles.Add(testTitle);
+            //horror.listOfTitles.Add(test2Title);
+            //all.listOfTitles.Add(test2Title);
+            //Genre combinedTitles;   //fix
+            //combinedTitles = testTitle + test2Title;
 
-            foreach (Title title in combinedTitles.listOfTitles)
-            {
-                Console.WriteLine(title);
-                //fantasy.listOfTitles.Add(title);
-            }
+            //foreach (Title title in combinedTitles.listOfTitles)
+            //{
+            //    Console.WriteLine(title);
+            //    //fantasy.listOfTitles.Add(title);
+            //}
+
+            ViewCatalog visit = new ViewCatalog();
+            visit.Start();
         }
     }
 }
